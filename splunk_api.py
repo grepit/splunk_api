@@ -32,7 +32,7 @@ print("====>sessionkey:  %s  <====" % sessionkey)
 
 #Step 2: Create a search job
 
-#searchquery = 'index=app sourcetype=epc_psl HttpStatusCode earliest=@day latest=now() |stats count as Total, count(eval(HttpStatusCode="Forbidden" OR HttpStatusCode="GatewayTimeout" OR HttpStatusCode="BadGateway" OR RequestDuration>1500)) as Failure  |eval percent=(((Total-Failure)/Total)*100) '
+# here is where you actually put your query index=  or sourcetype etc
 searchquery = 'source="/var/log/apt/history.log" host="bf1b3d8b459a" sourcetype="test_src_type"'
 
 #searchquery = 'index="_internal" | head 100'
